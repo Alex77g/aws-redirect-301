@@ -4,7 +4,7 @@
 
 serverless deploy --stage=prod
 
-### Permissions
+## Permissions
 
 IAM is available after deploying the lambda function
 
@@ -31,7 +31,7 @@ At the Role aws-redirect-301-prod-us-east-1-lambdaRole
 }
 ```
 
-### Cloudfront
+## Cloudfront
 
 add the lambda in behavior tab of the desired distribution
 
@@ -39,14 +39,13 @@ then goto *Lambda Function Associations*
 
 add *CloudFront Event* - *viewer request* - and arn with a version number and do not include body
 
-example arn: arn:aws:lambda:us-east-1:<your-aws-arn-id>:function:aws-redirect-301-prod-index:<version(1/2/3...)>
+example arn: arn:aws:lambda:us-east-1:</your-aws-arn-id/>:function:aws-redirect-301-prod-index:<version(1/2/3...)>
 
-#### region
+## region
 
-region has to be us-east-1
+edgelambda region must be us-east-1
 
-#### event
+## event
 
-origin has to be the bucket url
-
-example: s3://<origin-bucket>.s3-website.<bucket-region>.amazonaws.com
+origin must be the rediricting bucket url  
+example: s3://</origin-bucket/>.s3-website.</bucket-region/>.amazonaws.com
